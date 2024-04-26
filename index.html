@@ -1,6 +1,8 @@
 <html>
   <!--berru-g/github-->
 <head>
+  <meta charset=utf-8>
+	<meta name=viewport content="width=device-width, initial-scale=1">
   <title>No data generator</title>
   <link rel="shortcut icon" href="https://icones8.fr/icon/7911/qr-code" />
     <meta name="description" content="QR Code generate - no ads, no data retrieved or used, generate your qrcode for free ">
@@ -13,57 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>  
 </head>
 <body>
-<script>
-  let qrcodeInstance;
 
-  function generateQRCode() {
-    const inputText = document.getElementById("inputText").value;
-    if (!inputText) {
-      alert("Please enter a text to convert to a QR Code!");
-      return;
-    }
-
-    const qrcodeContainer = document.getElementById("qrcodeContainer");
-    qrcodeContainer.innerHTML = ""; // Réinitialiser le contenu précédent du conteneur QR Code
-
-    qrcodeInstance = new QRCode(qrcodeContainer, {
-      text: inputText,
-      width: 256,
-      height: 256,
-    });
-  }
-
-  function downloadQRCode() {
-    if (!qrcodeInstance) {
-      alert("Please generate the QR Code first!");
-      return;
-    }
-
-    const canvas = document.createElement("canvas");
-    canvas.width = 256;
-    canvas.height = 256;
-    const context = canvas.getContext("2d");
-
-    // Dessiner le contenu HTML du conteneur QR Code sur le canvas
-    const qrcodeContainer = document.getElementById("qrcodeContainer");
-    context.drawImage(qrcodeContainer.querySelector("img"), 0, 0);
-
-    // Convertir le contenu du canvas en URL de données (data URL)
-    const imageDataUrl = canvas.toDataURL("image/png");
-
-    // Créer un élément de lien temporaire pour le téléchargement
-    const link = document.createElement("a");
-    link.href = imageDataUrl;
-    link.download = "qrcode.png"; // Nom du fichier téléchargé
-    document.body.appendChild(link);
-
-    // Simuler un clic sur le lien pour déclencher le téléchargement
-    link.click();
-
-    // Supprimer l'élément de lien temporaire
-    document.body.removeChild(link);
-  }
-</script>
 <script>
   // Afficher une fenêtre d'alerte personnalisée
   Swal.fire({
@@ -84,6 +36,7 @@
   <div id="qrcodeContainer"></div>
   <button onclick="downloadQRCode()">download</button>
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/qrcode.min.js"></script> 
+  <script src="script.js"></script>
 </body>
     <footer class="footer">
     <div class="footer-columns">
