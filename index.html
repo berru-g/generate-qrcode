@@ -9,10 +9,25 @@
   <meta name="robots" content="index, follow">  
   <meta property="og:title" content="QR Code generate - no ads">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
     
 </head>
 
 <body>
+  <script>
+    // Afficher une fenêtre d'alerte personnalisée
+    Swal.fire({
+      title: 'Welcome',
+      text: 'This is the QRCode generate. no ads, no data retrieved or used, generate your qrcode for free. I use a free and open source JavaScript library to download your QRCode, visible here cdndotjsdelivrdotnet. If you didnt want to take any risks regarding data tracking, you can screenshot your QR instead of downloading it. Good day. Berru',
+      icon: 'success', //icon: 'path/to/custom/icon.png',
+        confirmButtonText: 'OK',
+      customClass: {
+        confirmButton: 'btn btn-primary',
+      }
+    });
+    </script>
+
   <h1>QR Code generate</h1>
   <p>no ads, no data retrieved or used, generate your qrcode for free</p>
   <input type="text" id="inputText" placeholder="URL or words to convert"/>
