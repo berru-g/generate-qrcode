@@ -3,7 +3,7 @@ let qrcodeInstance;
     function generateQRCode() {
       const inputText = document.getElementById("inputText").value;
       if (!inputText) {
-        alert("Veuillez saisir un texte à convertir en QR Code !");
+        alert("Please enter a text to convert to a QR Code!");
         return;
       }
 
