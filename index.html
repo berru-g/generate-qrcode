@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>  
+</head>
+<body>
 <script>
   let qrcodeInstance;
 
@@ -61,7 +63,8 @@
     // Supprimer l'élément de lien temporaire
     document.body.removeChild(link);
   }
-
+</script>
+<script>
   // Afficher une fenêtre d'alerte personnalisée
   Swal.fire({
     title: 'Welcome',
@@ -73,8 +76,7 @@
     }
   });
   </script>
-</head>
-<body>
+
   <h1>QR Code generate</h1>
   <p>no ads, no data retrieved or used, generate your qrcode for free</p>
   <input type="text" id="inputText" placeholder="URL or words to convert"/>
