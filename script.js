@@ -1,3 +1,14 @@
+ // Afficher une fenêtre d'alerte personnalisée
+ Swal.fire({
+  title: 'Welcome',
+  text: 'This is the QRCode generate. no ads, no data retrieved or used, generate your qrcode for free. I use a free and open source JavaScript library to download your QRCode, visible here cdndotjsdelivrdotnet. If you didnt want to take any risks regarding data tracking, you can screenshot your QR instead of downloading it. Good day. Berru',
+  icon: 'success', //icon: 'path/to/custom/icon.png',
+    confirmButtonText: 'OK',
+  customClass: {
+    confirmButton: 'btn btn-primary',
+  }
+});
+//generator
 let qrcodeInstance;
 
     function generateQRCode() {
@@ -19,7 +30,7 @@ let qrcodeInstance;
 
     function downloadQRCode() {
       if (!qrcodeInstance) {
-        alert("Veuillez d'abord générer le QR Code !");
+        alert("Please generate QR Code first !");
         return;
       }
 
