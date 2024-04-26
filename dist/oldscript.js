@@ -1,27 +1,22 @@
  // Afficher une fenêtre d'alerte personnalisée
  Swal.fire({
-  title: 'Generate your qrcode',
-  text: 'No ads, no data retrieved or used and free',
+  title: 'Welcome',
+  text: 'This is the QRCode generate. no ads, no data retrieved or used, generate your qrcode for free. I use a free and open source JavaScript library to download your QRCode, visible here cdndotjsdelivrdotnet. If you didnt want to take any risks regarding data tracking, you can screenshot your QR instead of downloading it. Good day. Berru',
   icon: 'success', //icon: 'path/to/custom/icon.png',
     confirmButtonText: 'OK',
   customClass: {
     confirmButton: 'btn btn-primary',
-  },
-   background:'#ffffff',
+  }
 });
 //generator
 let qrcodeInstance;
 
     function generateQRCode() {
-    const inputText = document.getElementById("inputText").value;
-    if (!inputText) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Please enter a text to convert to a QR Code!'
-        });
+      const inputText = document.getElementById("inputText").value;
+      if (!inputText) {
+        alert("Please enter a text to convert to a QR Code!");
         return;
-    }
+      }
 
       const qrcodeContainer = document.getElementById("qrcodeContainer");
       qrcodeContainer.innerHTML = ""; // Réinitialiser le contenu précédent du conteneur QR Code
@@ -33,16 +28,11 @@ let qrcodeInstance;
       });
     }
 
-      function downloadQRCode() {
-    const inputText = document.getElementById("inputText").value;
-    if (!inputText) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Please generate QR Code first !'
-        });
+    function downloadQRCode() {
+      if (!qrcodeInstance) {
+        alert("Please generate QR Code first !");
         return;
-    }
+      }
 
       const canvas = document.createElement("canvas");
       canvas.width = 256;
